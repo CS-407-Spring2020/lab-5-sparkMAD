@@ -4,12 +4,9 @@
     <item
         android:id="@+id/Logout"
         android:title="Logout"
-        android:icon="@drawable/ic_icon"
-        app:showAsAction="never"
         />
     <item
         android:id="@+id/AddNote"
         android:title="Add Note"
-        app:showAsAction="never"
         />
 </menu>
