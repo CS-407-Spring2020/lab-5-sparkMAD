@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
         EditText myTextField = (EditText) findViewById(R.id.editText);
         Log.i("first", "msg is " + myTextField.getText().toString());
         String str = myTextField.getText().toString();
-//
-//        SharedPreferences sharedPreferences = getSharedPreferences("c.sakshi.lab5", Context.MODE_PRIVATE);
-//        sharedPreferences.edit().putString("username", str).apply();
+
+        SharedPreferences sharedPreferences = getSharedPreferences("c.sakshi.lab5", Context.MODE_PRIVATE);
+        sharedPreferences.edit().putString("username", str).apply();
 
         goToActivity2(str);
     }
@@ -38,13 +38,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        SharedPreferences sharedPreferences = getSharedPreferences("c.sakshi.lab5", Context.MODE_PRIVATE);
-//
-//        if (!sharedPreferences.getString(usernameKey, "").equals("")) {
-//            sharedPreferences.getString(usernameKey, "");
-//        } else {
-//            setContentView(R.layout.activity_main);
-//
-//        }
+        SharedPreferences sharedPreferences = getSharedPreferences("c.sakshi.lab5", Context.MODE_PRIVATE);
+
+        if (!sharedPreferences.getString("username", "").equals("")) {
+            String str = sharedPreferences.getString("username", "");
+            goToActivity2(str);
+        } else {
+            setContentView(R.layout.activity_main);
+
+        }
     }
 }
